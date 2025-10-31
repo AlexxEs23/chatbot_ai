@@ -45,10 +45,10 @@ export default function App() {
     setInput("");
   }
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center bg-gradient-to-br from-amber-50 via-amber-100 to-orange-50">
+    <div className="flex flex-col min-h-screen justify-center items-center bg-gradient-to-br from-amber-50 via-amber-100 to-orange-50  ">
       <main className="grow flex justify-center items-center p-4 w-full">
         {messages.length === 0 && (
-          <div className="text-center text-gray-500 animate-fade-in">
+          <div className="md:absolute md:left-6 md:right-8 m-auto text-center text-gray-500 animate-fade-in ">
             <h2 className="text-2xl md:text-4xl font-semibold mb-4 animate-bounce-in">
               Selamat Datang di Chatbot AI
             </h2>
@@ -66,7 +66,7 @@ export default function App() {
         )}
         <div className="flex flex-col grow justify-between ">
           {messages.map((msg, index) => [
-            <div key={index} className="animate-slide-up mb-3">
+            <div key={index} className="animate-slide-up mb-15">
               <p className={msg.role === "user" ? "text-right" : "text-left"}>
                 <span
                   className={
