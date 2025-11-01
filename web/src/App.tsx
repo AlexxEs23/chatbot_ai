@@ -27,6 +27,7 @@ export default function App() {
         ? contentRaw
             .map((c) => {
               if (typeof c === "string") return c;
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const anyC = c as any;
               if (typeof anyC.text === "string") return anyC.text;
               if (typeof anyC.content === "string") return anyC.content;
@@ -69,7 +70,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center bg-gradient-to-br from-amber-50 via-amber-100 to-orange-50">
+    <div className="flex flex-col min-h-screen justify-center items-center bg-linear-to-br from-amber-50 via-amber-100 to-orange-50">
       <main className="grow flex justify-center items-center p-4 w-full">
         {messages.length === 0 && (
           <div className="md:absolute md:left-6 md:right-8 m-auto text-center text-gray-500 animate-fade-in">
@@ -95,7 +96,7 @@ export default function App() {
                 <span
                   className={
                     msg.role === "user"
-                      ? "inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-2xl max-w-xs shadow-md"
+                      ? "inline-block bg-linear-to-r from-blue-500 to-blue-600 text-white p-3 rounded-2xl max-w-xs shadow-md"
                       : "inline-block bg-white text-gray-800 p-3 rounded-2xl max-w-xs shadow-md"
                   }
                 >
